@@ -1,6 +1,7 @@
 class Developer {
   constructor(name = "anyUser") {
     this._name = name;
+    this._isAdmin = false;
     this._skills = [];
   }
 
@@ -27,6 +28,7 @@ class Developer {
     const proto = Object.getPrototypeOf(this);
     const clone = Object.create(proto);
     clone._name = this._name;
+    clone._isAdmin = this._isAdmin;
     clone._skills = [...this._skills];
     return clone;
   }
